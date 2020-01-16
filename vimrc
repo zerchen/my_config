@@ -56,6 +56,7 @@ Plug 'mbbill/undotree/'
 Plug 'Raimondi/delimitMate'
 Plug 'preservim/nerdcommenter'
 Plug 'Shougo/neocomplete.vim'
+Plug 'easymotion/vim-easymotion'
 call plug#end()
 
 colorscheme gruvbox
