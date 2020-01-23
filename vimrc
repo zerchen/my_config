@@ -70,6 +70,7 @@ Plug 'ncm2/ncm2-jedi'
 Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-match-highlight'
 Plug 'ncm2/ncm2-github'
+Plug 'easymotion/vim-easymotion'
 call plug#end()
 
 colorscheme gruvbox
