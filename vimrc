@@ -1,8 +1,9 @@
-set nocompatible
 filetype on
 filetype indent on
 filetype plugin on
 filetype plugin indent on
+set nocompatible
+set encoding=utf-8
 syntax on 
 let mapleader=" "
 set relativenumber
@@ -49,13 +50,26 @@ map R :source ~/.vim/vimrc<CR>
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
-Plug 'ycm-core/YouCompleteMe'
 Plug 'preservim/nerdtree'
+Plug 'easymotion/vim-easymotion'
 Plug 'w0rp/ale'
 Plug 'mbbill/undotree/'
 Plug 'Raimondi/delimitMate'
 Plug 'preservim/nerdcommenter'
 Plug 'Shougo/neocomplete.vim'
+Plug 'fatih/vim-go/'
+Plug 'Yggdroot/indentLine'
+Plug 'jiangmiao/auto-pairs'
+
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+autocmd BufEnter * call ncm2#enable_for_buffer()
+set completeopt=noinsert,menuone,noselect
+Plug 'ncm2/ncm2-path'
+Plug 'ncm2/ncm2-jedi'
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-match-highlight'
+Plug 'ncm2/ncm2-github'
 call plug#end()
 
 colorscheme gruvbox
