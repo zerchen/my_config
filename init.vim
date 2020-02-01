@@ -45,14 +45,13 @@ map sv <C-w>t<C-w>H
 map sh <C-w>t<C-w>K
 map cc <LEADER>cc
 map cu <LEADER>cu
-map R :source ~/.vim/vimrc<CR>
+map R :source ~/.config/nvim/init.vim<CR>
 
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
 Plug 'preservim/nerdtree'
 Plug 'easymotion/vim-easymotion'
-Plug 'w0rp/ale'
 Plug 'mbbill/undotree/'
 Plug 'Raimondi/delimitMate'
 Plug 'preservim/nerdcommenter'
@@ -60,17 +59,10 @@ Plug 'Shougo/neocomplete.vim'
 Plug 'fatih/vim-go/'
 Plug 'Yggdroot/indentLine'
 Plug 'jiangmiao/auto-pairs'
-
-Plug 'ncm2/ncm2'
-Plug 'roxma/nvim-yarp'
-autocmd BufEnter * call ncm2#enable_for_buffer()
-set completeopt=noinsert,menuone,noselect
-Plug 'ncm2/ncm2-path'
-Plug 'ncm2/ncm2-jedi'
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-match-highlight'
-Plug 'ncm2/ncm2-github'
 Plug 'easymotion/vim-easymotion'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 call plug#end()
 
 colorscheme gruvbox
