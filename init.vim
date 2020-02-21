@@ -10,7 +10,7 @@ set relativenumber
 set number
 set showcmd
 set scrolloff=5
-set mouse=a
+set mouse=c
 set nowrap
 set wildmenu
 set hlsearch
