@@ -46,8 +46,10 @@ map sh <C-w>t<C-w>K
 map cc <LEADER>cc
 map cu <LEADER>cu
 map R :source ~/.config/nvim/init.vim<CR>
+au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
 call plug#begin('~/.vim/plugged')
+Plug 'honza/vim-snippets'
 Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
 Plug 'preservim/nerdtree'
