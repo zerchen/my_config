@@ -21,6 +21,8 @@ set smartcase
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
 noremap J 5j
 noremap K 5k
+noremap W 5w
+noremap B 5b
 
 map s <nop>
 map S :w<CR>
