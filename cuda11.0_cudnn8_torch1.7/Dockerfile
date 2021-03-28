@@ -17,3 +17,5 @@ RUN rm -rf ~/.vimrc && cd ~ && git clone https://github.com/ROC-Zerui/my_config 
 
 RUN git clone https://github.com/open-mmlab/mmdetection.git && cd mmdetection && \
     /opt/conda/bin/pip install -r requirements/build.txt && /opt/conda/bin/pip install -v -e .
+
+RUN /opt/conda/bin/pip install cython 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI'
