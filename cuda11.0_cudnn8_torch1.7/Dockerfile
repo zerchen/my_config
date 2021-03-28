@@ -19,3 +19,5 @@ RUN git clone https://github.com/open-mmlab/mmdetection.git && cd mmdetection &&
     /opt/conda/bin/pip install -r requirements/build.txt && /opt/conda/bin/pip install -v -e .
 
 RUN /opt/conda/bin/pip install cython 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI'
+
+RUN /opt/conda/bin/python -m pip install 'git+https://github.com/facebookresearch/detectron2.git'
