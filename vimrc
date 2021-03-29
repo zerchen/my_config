@@ -50,3 +50,23 @@ map cc <LEADER>cc
 map cu <LEADER>cu
 map R :source ~/.vim/vimrc<CR>
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
+
+call plug#begin('~/.vim/plugged')
+Plug 'vim-airline/vim-airline'
+Plug 'morhetz/gruvbox'
+Plug 'preservim/nerdtree'
+"Plug 'easymotion/vim-easymotion'
+Plug 'mbbill/undotree/'
+"Plug 'Raimondi/delimitMate'
+Plug 'preservim/nerdcommenter'
+"Plug 'fatih/vim-go/'
+Plug 'Yggdroot/indentLine'
+Plug 'jiangmiao/auto-pairs'
+"Plug 'easymotion/vim-easymotion'
+call plug#end()
+
+colorscheme gruvbox
+set background=dark
+
+map tt :NERDTreeToggle<CR>
+map L :UndotreeToggle<CR>

@@ -1,4 +1,4 @@
-From nvidia/cuda:10.2-cudnn8-devel-ubuntu16.04
+From nvidia/cuda:9.2-cudnn7-devel-ubuntu16.04
 
 RUN apt-get update && apt-get install -y ffmpeg libsm6 libxext6 git ninja-build libglib2.0-0 libsm6 libxrender-dev libxext6 net-tools\
     build-essential cmake git wget libopencv-dev libsnappy-dev python-dev python-pip tzdata vim openssh-server tmux curl libboost-dev && apt-get clean \
@@ -9,9 +9,9 @@ RUN wget --quiet https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_6
     rm ~/anaconda.sh && \
     echo "export PATH=/opt/conda/bin:$PATH \n" >> ~/.bashrc
 
-RUN /opt/conda/bin/conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=10.2 -c pytorch
+RUN /opt/conda/bin/conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=9.2 -c pytorch
 
-RUN /opt/conda/bin/pip install mmcv-full -f https://download.openmmlab.com/mmcv/dist/cu102/torch1.7.0/index.html
+RUN /opt/conda/bin/pip install mmcv-full -f https://download.openmmlab.com/mmcv/dist/cu92/torch1.7.0/index.html
 
 RUN /opt/conda/bin/pip install cython 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI'
 
