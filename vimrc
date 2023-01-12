@@ -55,14 +55,16 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
 Plug 'preservim/nerdtree'
-"Plug 'easymotion/vim-easymotion'
+Plug 'easymotion/vim-easymotion'
 Plug 'mbbill/undotree/'
-"Plug 'Raimondi/delimitMate'
+Plug 'Raimondi/delimitMate'
 Plug 'preservim/nerdcommenter'
-"Plug 'fatih/vim-go/'
+Plug 'fatih/vim-go/'
 Plug 'Yggdroot/indentLine'
 Plug 'jiangmiao/auto-pairs'
-"Plug 'easymotion/vim-easymotion'
+Plug 'easymotion/vim-easymotion'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 call plug#end()
 
 colorscheme gruvbox
