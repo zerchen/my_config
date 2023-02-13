@@ -10,7 +10,7 @@ set relativenumber
 set number
 set showcmd
 set scrolloff=5
-set mouse=c
+set mouse=a
 set nowrap
 set wildmenu
 set hlsearch
@@ -18,8 +18,8 @@ exec "nohlsearch"
 set incsearch
 set ignorecase
 set smartcase
-autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
-autocmd FileType c,cpp setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
+autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=1000
+autocmd FileType c,cpp setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=1000
 noremap J 5j
 noremap K 5k
 noremap W 5w
