@@ -1,19 +1,36 @@
-From nvidia/cudagl:11.3.0-devel-ubuntu20.04
+FROM nvidia/cudagl:11.3.0-devel-ubuntu20.04
 
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y ffmpeg libsm6 libxext6 git ninja-build libglib2.0-0 libsm6 libxrender-dev libxext6 net-tools\
-    build-essential cmake git wget libopencv-dev libsnappy-dev python-dev tzdata vim openssh-server curl libboost-dev\
-    libevent-dev libncurses-dev make automake libvulkan1 && apt-get clean && rm -rf /var/lib/apt/lists/*
+ENV DEBIAN_FRONTEND=noninteractive
+ENV NVIDIA_VISIBLE_DEVICES all
+ENV NVIDIA_DRIVER_CAPABILITIES graphics,utility,compute,display
+SHELL ["/bin/bash", "-c"]
 
-#RUN wget --quiet https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh -O ~/anaconda.sh && \
-    #/bin/bash ~/anaconda.sh -b -p /opt/conda && \
-    #rm ~/anaconda.sh && \
-    #echo "export PATH=/opt/conda/bin:$PATH \n" >> ~/.bashrc
+RUN apt-get update -q \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y \
+    libglvnd-dev \
+    software-properties-common \
+    ffmpeg \
+    unzip \
+    lsb-release \
+    vim \
+    git \
+    cmake \
+    curl \
+    libboost-dev \
+    make \
+    wget \
+    htop \
+    byobu \
+    python3-dev \
+    python3-pip \
+    libvulkan1 \
+    mesa-vulkan-drivers \
+    vulkan-utils \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
-#RUN /opt/conda/bin/conda install pytorch==1.12.1 torchvision==0.13.1 torchaudio==0.12.1 cudatoolkit=11.3 -c pytorch
+RUN pip3 install gym==0.25.2 open3d transforms3d imageio
 
-#RUN rm -rf ~/.vimrc && cd ~ && git clone https://github.com/ROC-Zerui/my_config.git && mv ~/my_config ~/.vim && \
-    #curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+RUN pip3 install sapien==2.2.1 networkx==2.8.8
 
-#RUN cd /tmp && wget https://github.com/tmux/tmux/archive/2.9.tar.gz && tar xvzf 2.9.tar.gz && cd tmux-2.9/ && \
-    #bash autogen.sh && ./configure && make && make install && cd .. && rm -rf ./tmux-2.9* && cd &&\
-    #git clone https://github.com/gpakosz/.tmux.git && ln -s -f .tmux/.tmux.conf && cp .tmux/.tmux.conf.local .
+RUN pip3 install torch torchvision --extra-index-url https://download.pytorch.org/whl/cu113
