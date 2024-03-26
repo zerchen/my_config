@@ -1,4 +1,4 @@
-FROM nvidia/cudagl:11.3.0-devel-ubuntu20.04
+FROM nvidia/cuda:12.3.2-devel-ubuntu22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV NVIDIA_VISIBLE_DEVICES all
@@ -24,8 +24,7 @@ RUN apt-get update -q \
     python3-dev \
     python3-pip \
     libvulkan1 \
-    mesa-vulkan-drivers \
-    vulkan-utils \
+    vulkan-tools \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
